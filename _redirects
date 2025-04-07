@@ -2,5 +2,7 @@
 /nosotros     /src/pages/nosotros/nosotros.html     200
 /app   /src/pages/beneficios/beneficios.html 200
 /descargar    /src/pages/descargar/descargar.html   200
-/privacy    /src/pages/legal/aviso.html   200
+/privacidad    /src/pages/legal/aviso.html   200
 /policy    /src/pages/legal/policy.pdf   200
+/soporte    /src/pages/legal/soporte.html   200
+/support    /src/pages/legal/support.pdf   200
