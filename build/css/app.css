@@ -581,7 +581,7 @@ img {
   .nav {
     all: unset;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     align-items: center;
   }
 }
@@ -739,6 +739,20 @@ img {
 @media (min-width: 1024px) {
   .video iframe {
     height: 55rem;
+  }
+}
+
+.pdf {
+  background-color: #ebf2ff;
+}
+.pdf__heading {
+  margin-top: -5rem;
+  padding-bottom: 2.5rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .pdf__heading {
+    margin-top: 2.5rem;
   }
 }
 

@@ -28,7 +28,7 @@
     @include m.tablet {
         all: unset; // limpia posicionamiento absoluto
         display: flex;
-        gap: 1rem;
+        gap:2rem;
         align-items: center;
     }
 

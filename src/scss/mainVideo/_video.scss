@@ -23,3 +23,17 @@
         }
     }
 }
+
+.pdf {
+    background-color: v.$colorLight;
+
+    &__heading {
+        margin-top: -(v.$spaceRegular);
+        padding-bottom: v.$spaceSmall;
+        text-align: center;
+
+        @include m.tablet{
+            margin-top: v.$spaceSmall;
+        }
+    }
+}
