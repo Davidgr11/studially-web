@@ -1,0 +1,118 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.nav {
+    // Postitioning
+    position: absolute;
+    top:7.5rem;
+    left: 0;
+
+    // Styling
+    width: 100%;
+    margin-top: 1rem;
+    padding: 2rem;
+    background-color: v.$colorDark;
+    border-radius: v.$spaceRegular;
+
+    // Order
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    //transform: translateY(-200%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+
+    @include m.tablet {
+        all: unset; // limpia posicionamiento absoluto
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    // Burger Logo Setup
+    &__burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 3rem;
+        height: 2rem;
+
+        // Lines
+        span {
+            height: 0.3rem;
+            width: 100%;
+            background-color: v.$colorLight;
+            border-radius: 0.3rem;
+            transition: 0.3s;
+        }
+
+        &:hover {
+            cursor: pointer;
+            span {
+                background-color: v.$color2;
+                transform: scale(1.1);
+            }
+        }
+        @include m.tablet {
+            display: none;
+        }
+    }
+
+    // Links Setup
+    &__link {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 40%;
+        border-bottom: 0.5rem solid v.$color1;
+        border-style: inline-block;
+        color: v.$colorLight;
+        font-weight: v.$fontWeightBold;
+
+        &:hover {
+            cursor: pointer;
+            border-bottom: 0.5rem solid v.$color2;
+            transform: scale(1.1);
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        @include m.tablet {
+            font-size: 1.6rem;
+            width: auto;
+            border: none;
+        }
+    }
+
+    // Active Modificator
+    &__link--active {
+        border-bottom: 0.5rem solid v.$color2;
+    }
+}
+
+// Setup
+#selectNav {
+    display: none;
+}
+
+#selectNav:checked~.nav {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#selectNav:checked+.nav__burger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#selectNav:checked+.nav__burger span:nth-child(2) {
+    opacity: 0;
+}
+
+#selectNav:checked+.nav__burger span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}

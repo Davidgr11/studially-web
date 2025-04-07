@@ -1,0 +1,23 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Buttons
+.btnPrimary {
+    @include m.btn(v.$color1, v.$colorLight, v.$colorDark, v.$colorLight);
+}
+.btnAux {
+    @include m.btn(v.$color1, v.$colorLight, v.$color2, v.$colorDark);
+}
+
+.btnSecondary {
+    @include m.btn(v.$color2, v.$colorDark, v.$colorDark, v.$colorMidLight);
+}
+
+.btnDark {
+    @include m.btn(v.$colorDark, v.$colorMidLight, v.$colorDark, v.$colorMidLight);
+}
+
+.btnLight {
+    @include m.btn(v.$colorMidLight, v.$colorDark, v.$colorDark, v.$colorMidLight);
+}
+

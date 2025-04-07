@@ -1,0 +1,71 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.news {
+    background-color: v.$colorBg;
+
+    &__heading {
+        color: v.$colorDark;
+        text-align: center;
+    }
+
+    &__grid {
+        padding: v.$spaceSmall 0;
+        display: grid;
+        grid-template-columns: repeat(6, 20rem);
+        gap: v.$spaceSmall;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        scrollbar-color: v.$colorDark v.$colorBg;
+        scroll-snap-type: x mandatory;
+
+        @include m.tablet {
+            grid-template-columns: repeat(6, 25rem);
+        }
+    }
+
+    .new {
+        background-color: v.$colorLight;
+        height: 35rem;
+        border-radius: v.$spaceSmall;
+        padding: 1rem;
+        color: v.$colorDark;
+        text-align: center;
+        scroll-snap-align: start;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+
+
+        &:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+        }
+
+        &__img {
+            height: 40%;
+            margin: 0 auto;
+            border-radius: v.$spaceSmall;
+            margin-bottom: v.$spaceSmall;
+            object-fit: cover;
+        }
+
+        &__heading {
+            font-weight: v.$fontWeightBold;
+            color: v.$color1;
+        }
+
+        &__text {
+            span {
+                font-weight: v.$fontWeightBold;
+            }
+        }
+
+        &__btn {
+            width:60%;
+            margin: 0 auto;
+        }
+
+    }
+
+}

@@ -1,0 +1,68 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.hero2 {
+    background-color: v.$colorLight;
+    margin-top: -5rem;
+    @include m.mobile{
+        margin-top: 0rem;
+    }
+    &__heading {
+        text-align: center;
+        padding-bottom: v.$spaceSmall;
+    }
+
+    &__block {
+        display:flex;
+        flex-direction: column-reverse;
+        gap: v.$spaceRegular;
+        align-items: center;
+
+        @include m.tablet{
+            display:grid;
+            grid-template-columns: 2fr 1fr;
+            align-items: center;
+            gap: v.$spaceRegular;
+            justify-content: center;
+        }
+        @include m.desktop{
+            grid-template-columns: 1fr 1fr;
+            justify-content: space-between;
+            gap: 0;
+        }
+    }
+    &__content {
+        p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        span {
+            font-weight: v.$fontWeightBold;
+        }
+        .highlight {
+            background-color: v.$colorBg;
+            
+        }
+    }
+
+    &__img {
+        padding: v.$spaceSmall;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+        transform: rotate(5deg);
+        max-width: 30rem;
+        margin: 0 auto;
+
+        @include m.tablet{
+            max-width: 100%;
+        }
+        @include m.desktop{
+            max-width: 30rem;
+        }
+
+        &:hover{
+            padding:1rem;
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out; 
+        }
+    }
+}
