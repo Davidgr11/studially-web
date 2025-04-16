@@ -21,3 +21,22 @@
     @include m.btn(v.$colorMidLight, v.$colorDark, v.$colorDark, v.$colorMidLight);
 }
 
+.animate__jackInTheBox {
+    animation-duration: 2s;
+}
+.animate__fadeInUp {
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+.animate__pulse {
+    animation-iteration-count: infinite;
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.animate__animated {
+    visibility: visible !important;
+}
