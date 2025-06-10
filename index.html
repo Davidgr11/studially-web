@@ -153,11 +153,20 @@
                 </div>
             </div>
         </div>
-        <p class="footer__copy widthSpacing"><span>@2025 Todos los derechos reservados DEVRI S.A.P.I. DE
-                C.V.</span><br>Desarrollado por: David A González R</p>
+        <p class="footer__copy widthSpacing">
+            <span></span>
+            <br>Desarrollado por: David A González R
+        </p>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        const rights = document.querySelector('.footer__copy span');
+        const copy = document.querySelector('.footer__copy');
+        const currentYear = new Date().getFullYear();
+        rights.textContent = `@${currentYear} Todos los derechos reservados DEVRI S.A.P.I. DE C.V.`;
+        copy.insertBefore(rights, copy.firstChild);
+    </script>
 </body>
 
 </html>
